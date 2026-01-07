@@ -1,8 +1,6 @@
 import React, { type CSSProperties, type SVGProps, useEffect } from "react";
 import { CSSRules } from "./charlestehstyles";
 
-const text = "Charles Teh here, thanks for checking out my Refine setup! 👏";
-
 type Props = {
   containerStyle?: CSSProperties;
 };
@@ -131,19 +129,16 @@ export const CharlesTehBanner = ({ containerStyle }: Props) => {
             </div>
           </div>
         </div>
-        <Text text={text} />
+        <Text />
       </div>
     </div>
   );
 };
 
-const Text = ({ text }: { text: string }) => {
+const Text = () => {
   return (
-    <a
+    <div
       className="gh-link"
-      href="https://s.refine.dev/github-support"
-      target="_blank"
-      rel="noreferrer"
       style={{
         position: "absolute",
         height: "100%",
@@ -178,11 +173,22 @@ const Text = ({ text }: { text: string }) => {
         <span
           className="text"
           style={{
-            fontSize: "16px",
+            fontSize: "13px",
             lineHeight: "24px",
           }}
         >
-          {text}
+          Charles Teh here, thanks for checking out my Refine setup!👏{" "}
+          <a
+            href="https://github.com/charlesteh/react-refine-supabase-cloudflare"
+            target="_blank"
+            rel="noreferrer"
+            style={{
+              color: "#fff",
+              textDecoration: "underline",
+            }}
+          >
+            Check out the GitHub repository for this project
+          </a>
         </span>
         <span
           style={{
@@ -195,7 +201,7 @@ const Text = ({ text }: { text: string }) => {
           ⭐️
         </span>
       </div>
-    </a>
+    </div>
   );
 };
 
